@@ -1,0 +1,21 @@
+.-small-text14 {
+  //@include fluid-type($min_width, $max_width, map-get($fonts-sizes, h4-min), map-get($fonts-sizes, h4));
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.-opacity20 {
+  opacity: $opacity20;
+}
+
+.-opacity50 {
+  opacity: $opacity20;
+}
+
+.-padding-top60 {
+  padding-top: 60px;
+}
+
+.-padding-top80 {
+  padding-top: 80px;
+}

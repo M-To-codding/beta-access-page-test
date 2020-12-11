@@ -1,0 +1,43 @@
+h1 {
+  @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h1-min), map-get($fonts-sizes, h1));
+}
+
+h2 {
+  @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h2-min), map-get($fonts-sizes, h2));
+}
+
+h3 {
+  @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h3-min), map-get($fonts-sizes, h3));
+}
+
+h4 {
+  @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h4-min), map-get($fonts-sizes, h4));
+}
+
+h5 {
+  @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h5-min), map-get($fonts-sizes, h5));
+}
+
+h6 {
+  @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h6-min), map-get($fonts-sizes, h6));
+}
+
+.title {
+  text-align: center;
+  padding: 10px;
+}
+
+.subtitle {
+}
+
+.tip {
+}
+
+.text {
+}
+
+.error {
+  &.-red {
+  }
+}
+
