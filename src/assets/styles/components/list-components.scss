@@ -1,0 +1,44 @@
+.users-list-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.users-list-item {
+  width: 70%;
+
+  .user-item-link {
+    padding: 15px 10px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  .list-item-image {
+    display: flex;
+    vertical-align: middle;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .list-item-text {
+    padding: 15px;
+
+    .phone {
+      vertical-align: middle;
+    }
+
+    .initials {
+      vertical-align: middle;
+    }
+
+    .email {
+      z-index: 1;
+    }
+  }
+}
