@@ -11,6 +11,7 @@ import BetaAccessContainer from "./betaAccess/betaAccessContainer";
 import Footer from "../components/footer";
 import {checkAuthToken} from "../redux/actions/authActionCreators";
 import NotFound from "./notFound";
+import UsersListContainer from "./users/usersListContainer";
 
 interface AppProps {
   loading: boolean,
@@ -35,6 +36,8 @@ function App(props: AppProps) {
 
           <Switch>
             <Route exact={true} path="/" component={DashboardContainer}/>
+            <Route exact={true} path="/users"
+                   component={UsersListContainer}/>
             <Route exact={true} path="/access-denied"
                    component={BetaAccessContainer}/>
             <Route path="*" component={NotFound}/>
