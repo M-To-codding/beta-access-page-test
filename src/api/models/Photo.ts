@@ -7,6 +7,5 @@ export class Photo {
     this.large = large;
     this.medium = medium;
     this.thumbnail = thumbnail;
-
   }
 }

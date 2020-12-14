@@ -21,7 +21,6 @@ export class User {
     phone: string,
     email: string,
   ) {
-
     this.id = id;
     this.name = name;
     this.surname = surname;

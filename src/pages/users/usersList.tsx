@@ -58,14 +58,14 @@ function UsersList(props: UsersListProps) {
   if (props.loading) {
     return <section className="-padding-top80">
       <Loader/>
-    </section>;
+    </section>
   }
 
   return <section className="container users-list-container">
     <ul className="users-list">
       {list}
     </ul>
-  </section>;
+  </section>
 }
 
 export default UsersList;

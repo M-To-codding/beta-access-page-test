@@ -18,7 +18,7 @@ function DashboardContainer(props: DashboardProps) {
     history.replace('/access-denied');
   }
 
-  return<Dashboard/>;
+  return <Dashboard/>
 }
 
 const mapStateToProps = (state: any) => ({

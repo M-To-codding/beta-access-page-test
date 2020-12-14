@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 import SubmitButton from "../../components/submitButton";
 import TipMessage from "../../components/tipMessage";
 

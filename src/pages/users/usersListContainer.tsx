@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import {fetchUsers} from "../../redux/actions/usersActionCreators";
 import UsersList from "./usersList";
-import {push} from "react-router-redux";
 
 interface DashboardProps {
   loading: boolean,

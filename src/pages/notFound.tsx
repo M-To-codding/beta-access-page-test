@@ -4,7 +4,7 @@ function NotFound() {
 
   return <article className="container">
     <h3 className="title">Not found</h3>
-  </article>;
+  </article>
 }
 
 export default NotFound;

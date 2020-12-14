@@ -20,8 +20,9 @@ function Header(props: HeaderProps) {
         <Link to="/users">Users </Link>
         <a href="/" onClick={() => deleteCookie('auth_token')}>Logout</a>
       </section>
-      : <></>}
-  </header>;
+      : <></>
+    }
+  </header>
 }
 
 export default Header;

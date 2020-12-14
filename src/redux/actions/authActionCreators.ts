@@ -1,13 +1,13 @@
 import axios, {AxiosResponse} from "axios";
 import {
-  CHECK_AUTH_CODE_FAILURE, CHECK_AUTH_CODE_REQUEST,
+  CHECK_AUTH_CODE_FAILURE,
+  CHECK_AUTH_CODE_REQUEST,
   CHECK_AUTH_CODE_SUCCESS,
   FETCH_AUTH_CODE_FAILURE,
   FETCH_AUTH_CODE_REQUEST,
   FETCH_AUTH_CODE_SUCCESS
 } from "../constants/authConstants";
 import {getAuthorizedUserToken, setAuthorizedUserToken} from "../../utils/cookiesHandlers";
-import {Simulate} from "react-dom/test-utils";
 import {CODE_NOT_EXISTS} from "../../utils/errorTexts";
 
 
