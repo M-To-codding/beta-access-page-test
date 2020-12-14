@@ -1,3 +1,17 @@
+----
+
+* Fist of all, create file .env.development.local in root directory and paste below string there 
+(its needs for fetching existing codes for authorization):
+
+   #### `REACT_APP_MOCK_API_KEY =da3a04b6`
+  
+* Authorization code stores in cookies.
+  
+* Website looks like simple web page with nav menu and footer. 
+In nav menu implemented logout and random users list with styled and adaptive layout. 
+
+----
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
