@@ -15,20 +15,22 @@ function UsersList(props: UsersListProps) {
     event.stopPropagation();
   }
 
-  if(props.error != null) {
+  if (props.error != null) {
     return <section className="-padding-top80">{props.error.message}</section>;
   }
 
   let list = props.usersList.map((item: IUser, index: number) => {
     return <>
-      <li key={item.id} className="users-list-item">
+      <li key={item.id} className="users-list-item col-xl-10  col-md-10 col-sm-12">
         <Link to={`/users/${item.id}`} className="user-item-link">
 
-          <section className="list-item-image">
-            <img src={item.photo?.thumbnail} alt=""/>
+          <section className="list-item-image col-lg-2 col-sm-3">
+            <div className="image-wrapper">
+              <img className="image-small" src={item.photo?.medium} alt=""/>
+            </div>
           </section>
 
-          <section className="list-item-text">
+          <section className="list-item-text col-7">
             <section className="row">
               <h3 className="initials">
                 {item.name} {item.surname},

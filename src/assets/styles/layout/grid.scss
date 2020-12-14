@@ -12,8 +12,6 @@
   margin: 0 auto;
 }
 
-.section{}
-
 .list {
   width: auto;
 }
@@ -23,10 +21,6 @@
   margin: 10px;
   border-radius: 12px;
   background: $list-item-bg;
-}
-
-.grid {
-
 }
 
 .grid-item {
@@ -42,13 +36,13 @@
   width: 100%;
   background-color: $white;
   padding: 20px 10px;
-  box-shadow: 0 0 10px #b6b3b7;
+  box-shadow: 0 0 10px $light-gray;
   position: fixed;
   z-index: 2;
 }
 
 .footer {
-  background: #323232;
+  background: $dark-gray;
   color: white;
   width: 100%;
   padding: 20px 10px;

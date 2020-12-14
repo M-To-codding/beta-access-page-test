@@ -1,6 +1,5 @@
 .-small-text14 {
-  //@include fluid-type($min_width, $max_width, map-get($fonts-sizes, h4-min), map-get($fonts-sizes, h4));
-  font-size: 14px;
+  @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h4-min), map-get($fonts-sizes, h4));
   font-weight: 100;
 }
 

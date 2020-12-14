@@ -4,20 +4,31 @@
 }
 
 .users-list-item {
-  width: 70%;
-
   .user-item-link {
     padding: 15px 10px;
-    display: flex;
+    display: block;
     vertical-align: middle;
     align-items: center;
   }
 
   .list-item-image {
-    display: flex;
     vertical-align: middle;
-    border-radius: 30px;
-    overflow: hidden;
+    display: inline-block;
+
+    .image-wrapper {
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+      overflow: hidden;
+    }
+
+    .image-small {
+      vertical-align: middle;
+      border-style: none;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   .row {
@@ -28,6 +39,7 @@
 
   .list-item-text {
     padding: 15px;
+    display: inline-block;
 
     .phone {
       vertical-align: middle;
