@@ -35,12 +35,10 @@ function App(props: AppProps) {
           <Header auth={props.isAuthorized}/>
 
           <Switch>
-            <Route exact={true} path="/" component={DashboardContainer}/>
-            <Route exact={true} path="/users"
-                   component={UsersListContainer}/>
-            <Route exact={true} path="/access-denied"
-                   component={BetaAccessContainer}/>
-            <Route path="*" component={NotFound}/>
+            <Route exact={true} path="/" render={(props) => <DashboardContainer/>}/>
+            <Route exact={true} path="/users" render={(props) => <UsersListContainer/>}/>
+            <Route exact={true} path="/access-denied" render={(props) => <BetaAccessContainer/>}/>
+            <Route path="*" component={NotFound} render={(props) => <NotFound/>}/>
           </Switch>
 
           <Footer/>
