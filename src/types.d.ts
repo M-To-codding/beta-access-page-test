@@ -1,3 +1,16 @@
+interface IPayload {
+  isAuthorized?: boolean,
+  codesList?: Array<string>,
+  usersList?: Array,
+  error?: {} | string
+}
+
+interface IReduxAction {
+  type: string,
+  payload?: IPayload,
+  error?: string
+}
+
 interface AuthState {
   loading: boolean,
   codesList: Array<string>,
@@ -5,9 +18,7 @@ interface AuthState {
   error: string | null
 }
 
-interface AuthAction {
-  type: string,
-  payload?: Array<string> | boolean,
+interface AuthAction extends IReduxAction {
   additionalProp?: {} | string
 }
 
@@ -36,9 +47,7 @@ interface UsersState {
   error: any
 }
 
-interface UsersAction {
-  type: string,
-  payload?: Array<any>
+interface UsersAction extends IReduxAction {
 }
 
 type DispatchUsers = (args: UsersAction) => UsersAction;
