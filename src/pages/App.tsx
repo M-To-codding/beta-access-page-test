@@ -5,11 +5,11 @@ import '../assets/styles/App.scss';
 import {Route, Router, Switch} from 'react-router-dom';
 import {connect} from "react-redux";
 import Header from "../components/header";
-import {history} from "../redux/store";
+import store, {history} from "../redux/store";
 import DashboardContainer from "./dashboard/dashboardContainer";
 import BetaAccessContainer from "./betaAccess/betaAccessContainer";
 import Footer from "../components/footer";
-import {checkAuthToken} from "../redux/actions/authActionCreators";
+import {checkAuthToken, logOut} from "../redux/actions/authActionCreators";
 import NotFound from "./notFound";
 import UsersListContainer from "./users/usersListContainer";
 
@@ -17,10 +17,12 @@ interface AppProps {
   loading: boolean,
   isAuthorized: boolean,
   error: {},
-  checkAuthToken: any
+  checkAuthToken: any,
+  logOut: any
 }
 
 function App(props: AppProps) {
+
   useEffect(() => {
     if (!props.isAuthorized) {
       props.checkAuthToken();
@@ -32,7 +34,7 @@ function App(props: AppProps) {
       <div className="-padding-top80"/>
       <Router history={history}>
         <>
-          <Header auth={props.isAuthorized}/>
+          <Header auth={props.isAuthorized} logOut={props.logOut}/>
 
           <Switch>
             <Route exact={true} path="/" render={(props) => <DashboardContainer/>}/>
@@ -55,7 +57,8 @@ const mapStateToProps = (state: any) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  checkAuthToken: () => dispatch(checkAuthToken())
+  checkAuthToken: () => dispatch(checkAuthToken()),
+  logOut: () => dispatch(logOut())
 });
 
 export default connect(
