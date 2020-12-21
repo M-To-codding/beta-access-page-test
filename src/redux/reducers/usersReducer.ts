@@ -17,7 +17,7 @@ export const usersReducer = (state: UsersState = initialState, action: UsersActi
     case FETCH_USERS_SUCCESS:
       return {
         loading: false,
-        usersList:action.payload == null ? [{error: 'error'}] : action.payload?.map((item: any, index: number) => {
+        usersList:action.payload == null ? [{error: 'error'}] : action.payload?.usersList.map((item: any, index: number) => {
           return new User(
             `userKey-${index}`,
             item.name.first,

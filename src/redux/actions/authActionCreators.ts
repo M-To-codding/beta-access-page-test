@@ -68,7 +68,7 @@ function fetchAuthCodesRequest(): AuthAction {
 function fetchAuthCodesSuccess(authCodes: any): AuthAction {
   const action: AuthAction = {
     type: FETCH_AUTH_CODE_SUCCESS,
-    payload: authCodes.data.codes
+    payload: {codesList: authCodes.data.codes}
   };
   return action;
 }
@@ -76,7 +76,7 @@ function fetchAuthCodesSuccess(authCodes: any): AuthAction {
 function fetchAuthCodesFailure(error: any): AuthAction {
   const action: AuthAction = {
     type: FETCH_AUTH_CODE_FAILURE,
-    payload: error
+    payload: {error: error}
   };
   return action;
 }
@@ -91,7 +91,7 @@ function authRequest() {
 function authSuccess(isAuthorized: boolean) {
   const action: AuthAction = {
     type: CHECK_AUTH_CODE_SUCCESS,
-    payload: isAuthorized
+    payload: {isAuthorized: isAuthorized}
   };
   return action;
 }
@@ -99,8 +99,7 @@ function authSuccess(isAuthorized: boolean) {
 function authFailed(isAuthorized: boolean, error?: {} | string) {
   const action: AuthAction = {
     type: CHECK_AUTH_CODE_FAILURE,
-    payload: isAuthorized,
-    additionalProp: error,
+    payload: {isAuthorized: isAuthorized, error: error},
   };
   return action;
 }

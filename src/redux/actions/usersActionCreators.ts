@@ -32,7 +32,7 @@ function fetchUsersListSuccess(usersData: any): UsersAction {
   console.log(usersData);
   const action: UsersAction = {
     type: FETCH_USERS_SUCCESS,
-    payload: usersData.data.results
+    payload: {usersList: usersData.data?.results}
   };
   return action;
 }
@@ -40,7 +40,7 @@ function fetchUsersListSuccess(usersData: any): UsersAction {
 function fetchUsersListFailure(error: any): UsersAction {
   const action: UsersAction = {
     type: FETCH_USERS_FAILURE,
-    payload: error
+    payload: {error: error}
   };
   return action;
 }

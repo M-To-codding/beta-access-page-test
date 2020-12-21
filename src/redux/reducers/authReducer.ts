@@ -23,7 +23,7 @@ export const authReducer = (state: AuthState = initialState, action: AuthAction)
       return {
         ...state,
         loading: false,
-        codesList: action.payload,
+        codesList: action.payload?.codesList,
         error: null
       };
     case FETCH_AUTH_CODE_FAILURE:
@@ -31,7 +31,7 @@ export const authReducer = (state: AuthState = initialState, action: AuthAction)
         ...state,
         loading: false,
         codesList: [],
-        error: action.payload
+        error: action.payload?.error
       };
     case CHECK_AUTH_CODE_REQUEST:
       return {
@@ -42,15 +42,15 @@ export const authReducer = (state: AuthState = initialState, action: AuthAction)
       return {
         ...state,
         loading: false,
-        isAuthorized: action.payload,
+        isAuthorized: action.payload?.isAuthorized,
         error: null
       };
     case CHECK_AUTH_CODE_FAILURE:
       return {
         ...state,
         loading: false,
-        isAuthorized: action.payload,
-        error:  action.additionalProp
+        isAuthorized: action.payload?.isAuthorized,
+        error:  action.payload?.error
       };
     default:
       return state
