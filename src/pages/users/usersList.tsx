@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Loader from "../../components/loader";
+import ErrorContainer from "../../components/errorContainer";
 
 
 interface UsersListProps {
@@ -16,7 +17,7 @@ function UsersList(props: UsersListProps) {
   }
 
   if (props.error != null) {
-    return <section className="-padding-top80">{props.error.message}</section>;
+    return <ErrorContainer message={props.error?.message}/>
   }
 
   let list = props.usersList.map((item: IUser, index: number) => {
