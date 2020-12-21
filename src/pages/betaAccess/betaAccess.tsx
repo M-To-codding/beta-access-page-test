@@ -27,8 +27,8 @@ function BetaAccess(props: BetaAccessProps) {
 
       <div className="input-group col-xl-6 col-sm-12">
         <input type="text" value={props.inputText} onChange={event => props.setText(event.target.value)} name="text"
-               placeholder="Code" className=" col-xl-3  col-md-6  col-sm-12"/>
-        <div className="input-group-append  col-xl-3  col-md-6  col-sm-12" id="button-addon4">
+               placeholder="Code" className=" col-xl-8  col-md-6  col-sm-10"/>
+        <div className="input-group-append  col-xl-4  col-md-6  col-sm-10" id="button-addon4">
           <SubmitButton/>
         </div>
       </div>
