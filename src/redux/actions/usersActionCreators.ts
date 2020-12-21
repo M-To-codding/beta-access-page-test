@@ -37,10 +37,10 @@ function fetchUsersListSuccess(usersData: any): UsersAction {
   return action;
 }
 
-function fetchUsersListFailure(error: any): UsersAction {
+function fetchUsersListFailure(errorData: any): UsersAction {
   const action: UsersAction = {
     type: FETCH_USERS_FAILURE,
-    payload: {error: error}
+    payload: {error: errorData}
   };
   return action;
 }

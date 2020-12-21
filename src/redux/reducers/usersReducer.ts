@@ -35,7 +35,7 @@ export const usersReducer = (state: UsersState = initialState, action: UsersActi
       return {
         loading: false,
         flightsList: [],
-        error: action.payload
+        error: action.payload?.error
       };
     default:
       return state
