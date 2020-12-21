@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {deleteCookie} from "../utils/cookiesHandlers";
 
 
 interface HeaderProps {
-  auth: boolean
+  auth: boolean,
+  logOut: any
 }
 
 function Header(props: HeaderProps) {
@@ -18,7 +18,7 @@ function Header(props: HeaderProps) {
     {props.auth ?
       <section>
         <Link to="/users">Users </Link>
-        <a href="/" onClick={() => deleteCookie('auth_token')}>Logout</a>
+        <a href="/" onClick={() => props.logOut()}>Logout</a>
       </section>
       : <></>
     }
