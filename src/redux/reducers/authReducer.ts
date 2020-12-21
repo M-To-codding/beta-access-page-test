@@ -2,7 +2,7 @@ import {
   CHECK_AUTH_CODE_FAILURE, CHECK_AUTH_CODE_REQUEST, CHECK_AUTH_CODE_SUCCESS,
   FETCH_AUTH_CODE_FAILURE,
   FETCH_AUTH_CODE_REQUEST,
-  FETCH_AUTH_CODE_SUCCESS
+  FETCH_AUTH_CODE_SUCCESS, LOG_OUT
 } from "../constants/authConstants";
 
 const initialState: AuthState = {
@@ -46,6 +46,13 @@ export const authReducer = (state: AuthState = initialState, action: AuthAction)
         error: null
       };
     case CHECK_AUTH_CODE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        isAuthorized: action.payload?.isAuthorized,
+        error:  action.payload?.error
+      };
+    case LOG_OUT:
       return {
         ...state,
         loading: false,

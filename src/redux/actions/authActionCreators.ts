@@ -1,14 +1,17 @@
 import axios, {AxiosResponse} from "axios";
 import {
+  AUTHORIZATION_FAILED,
+  AUTHORIZATION_SUCCESS,
   CHECK_AUTH_CODE_FAILURE,
   CHECK_AUTH_CODE_REQUEST,
   CHECK_AUTH_CODE_SUCCESS,
   FETCH_AUTH_CODE_FAILURE,
   FETCH_AUTH_CODE_REQUEST,
-  FETCH_AUTH_CODE_SUCCESS
+  FETCH_AUTH_CODE_SUCCESS, LOG_OUT
 } from "../constants/authConstants";
-import {getAuthorizedUserToken, setAuthorizedUserToken} from "../../utils/cookiesHandlers";
+import {deleteCookie, getAuthorizedUserToken, setAuthorizedUserToken} from "../../utils/cookiesHandlers";
 import {CODE_NOT_EXISTS} from "../../utils/errorTexts";
+import {history} from "../store";
 
 
 export function checkAuthToken() {
@@ -56,6 +59,33 @@ export function fetchAuthCodes() {
     });
 
   }
+}
+
+export function logOut() {
+  deleteCookie('auth_token');
+
+  const action: AuthAction = {
+    type: LOG_OUT,
+    payload: {isAuthorized: false}
+  };
+  return action;
+}
+
+export function authorizationSuccess() {
+  const action: AuthAction = {
+    type: AUTHORIZATION_SUCCESS,
+  };
+  return action;
+}
+
+export function authorizationFailure(data?: any) {
+  const action: AuthAction = {
+    type: AUTHORIZATION_FAILED,
+    payload: data?.error
+  };
+
+  history.replace('/access-denied');
+  return action;
 }
 
 function fetchAuthCodesRequest(): AuthAction {
