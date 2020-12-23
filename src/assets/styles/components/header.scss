@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: $white;
+  padding: 0;
+  box-shadow: 0 0 10px $light-gray;
+  position: fixed;
+  z-index: 2;
+
+  .logo {
+    margin-right: 4vw;
+  }
+}
+
+.header-contacts {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  align-items: center;
+}
+
+.contacts-list-item {
+  justify-content: space-evenly;
+
+  .text {
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+}
+
+.logo {
+  display: block;
+  line-height: unset;
+}
