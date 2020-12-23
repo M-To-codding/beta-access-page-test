@@ -30,16 +30,6 @@
   background: $list-item-bg;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  background-color: $white;
-  padding: 20px 10px;
-  box-shadow: 0 0 10px $light-gray;
-  position: fixed;
-  z-index: 2;
-}
 
 .footer {
   background: $dark-gray;
@@ -49,4 +39,18 @@
   margin-top: auto;
   display: flex;
   justify-content: center;
+}
+
+.not-found {
+  background-image: url("https://unblast.com/wp-content/uploads/2018/06/404-Website-Page-Template.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 46px;
+
+  .container {
+    height: 100%;
+  }
 }
