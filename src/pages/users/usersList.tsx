@@ -22,7 +22,7 @@ function UsersList(props: UsersListProps) {
 
   let list = props.usersList.map((item: IUser, index: number) => {
     return <>
-      <li key={item.id} className="users-list-item col-xl-10  col-md-10 col-sm-12">
+      <li key={'user-' + index} className="users-list-item col-xl-10  col-md-10 col-sm-12">
         <Link to={`/users/${item.id}`} className="user-item-link">
 
           <section className="list-item-image col-lg-2 col-sm-3">
