@@ -5,6 +5,7 @@ import Loader from "../../components/loader";
 import {history} from "../../redux/store";
 import {authorizationFailure} from "../../redux/actions/authActionCreators";
 import {USER_NOT_AUTHORIZED} from "../../utils/errorTexts";
+import Home from "./home";
 
 interface DashboardProps {
   loading: boolean,
@@ -17,11 +18,11 @@ function DashboardContainer(props: DashboardProps) {
     return <Loader/>
   }
 
-  if (!props.isAuthorized) {
-    props.authorizationFailure({error: USER_NOT_AUTHORIZED});
+  if (props.isAuthorized) {
+    return <Dashboard/>
   }
 
-  return <Dashboard/>
+  return <Home/>
 }
 
 const mapStateToProps = (state: any) => ({
