@@ -5,11 +5,15 @@ import {
 } from "../redux/constants/authConstants";
 import {authorizationFailure, authorizationSuccess} from "../redux/actions/authActionCreators";
 import {USER_NOT_AUTHORIZED} from "./errorTexts";
+import {fetchUsers, usersListReset} from "../redux/actions/usersActionCreators";
 
 const apiErrorsHandler = (store: any) => (next: any) => (action: any) => {
 
-  if (action.type === CHECK_AUTH_CODE_FAILURE || action.type === FETCH_AUTH_CODE_FAILURE || action.type === LOG_OUT) {
+  if (action.type === CHECK_AUTH_CODE_FAILURE ||
+    action.type === FETCH_AUTH_CODE_FAILURE ||
+    action.type === LOG_OUT) {
     store.dispatch(authorizationFailure({error: USER_NOT_AUTHORIZED}));
+    store.dispatch(usersListReset());
   }
   if (action.type === CHECK_AUTH_CODE_SUCCESS) {
     store.dispatch(authorizationSuccess());

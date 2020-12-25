@@ -2,7 +2,8 @@ interface IPayload {
   isAuthorized?: boolean,
   codesList?: Array<string>,
   usersList?: Array,
-  error?: {} | string
+  error?: {} | string,
+  redirectTo?: string | null
 }
 
 interface IReduxAction {

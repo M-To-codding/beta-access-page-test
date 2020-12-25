@@ -1,4 +1,9 @@
-import {FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS} from "../constants/usersConstants";
+import {
+  FETCH_USERS_FAILURE,
+  FETCH_USERS_REQUEST,
+  FETCH_USERS_SUCCESS,
+  USERS_LIST_RESET
+} from "../constants/usersConstants";
 import {User} from "../../api/models/User";
 
 const initialState: UsersState = {
@@ -17,7 +22,7 @@ export const usersReducer = (state: UsersState = initialState, action: UsersActi
     case FETCH_USERS_SUCCESS:
       return {
         loading: false,
-        usersList:action.payload == null ? [{error: 'error'}] : action.payload?.usersList.map((item: any, index: number) => {
+        usersList: action.payload == null ? [{error: 'error'}] : action.payload?.usersList.map((item: any, index: number) => {
           return new User(
             `userKey-${index}`,
             item.name.first,
@@ -34,8 +39,13 @@ export const usersReducer = (state: UsersState = initialState, action: UsersActi
     case FETCH_USERS_FAILURE:
       return {
         loading: false,
-        flightsList: [],
+        usersList: [],
         error: action.payload?.error
+      };
+    case USERS_LIST_RESET:
+      return {
+        loading: false,
+        usersList: [],
       };
     default:
       return state

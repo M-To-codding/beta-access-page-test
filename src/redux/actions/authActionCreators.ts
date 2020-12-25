@@ -78,13 +78,15 @@ export function authorizationSuccess() {
   return action;
 }
 
-export function authorizationFailure(data?: any) {
+export function authorizationFailure(data?: IPayload) {
   const action: AuthAction = {
     type: AUTHORIZATION_FAILED,
-    payload: data?.error
+    payload: {error: data?.error,}
   };
 
-  history.replace('/access-denied');
+  if (data?.redirectTo != null) {
+    history.replace(data?.redirectTo);
+  }
   return action;
 }
 

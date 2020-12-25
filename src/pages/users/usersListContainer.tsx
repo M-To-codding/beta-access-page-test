@@ -21,7 +21,7 @@ function UsersListContainer(props: DashboardProps) {
     if (props.isAuthorized) {
       props.fetchUsers(10);
     } else {
-      props.authorizationFailure({error: USER_NOT_AUTHORIZED});
+      props.authorizationFailure({error: USER_NOT_AUTHORIZED, redirectTo: '/access-denied'});
     }
   }, []);
 
