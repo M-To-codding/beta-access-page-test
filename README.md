@@ -7,8 +7,7 @@
   
 * Authorization code stores in cookies.
   
-* Website looks like simple web page with nav menu and footer. 
-In nav menu implemented logout and random users list with styled and adaptive layout. 
+* Codes for authorization: wpe221, 3ewr565dfd, 8fd47fdf 
 
 ----
 
