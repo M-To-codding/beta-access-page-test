@@ -25,11 +25,16 @@ function NavMenu(props: NavMenuProps) {
           <Link to="/about" className="d-block">About</Link>
         </li>
         <li className="nav-item">
-          <Link to="/users" className="d-block">Blog</Link>
+          <Link to="/blog" className="d-block">Blog</Link>
         </li>
         <li className="nav-item">
-          <Link to="/users" className="d-block">Contact us</Link>
+          <Link to="/contact" className="d-block">Contact us</Link>
         </li>
+        {props.auth ?
+          <li className="nav-item">
+            <Link to="/users" className="d-block">Users</Link>
+          </li>
+        : null}
       </ul>
 
       {props.auth ?
