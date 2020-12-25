@@ -18,20 +18,21 @@ function BetaAccess(props: BetaAccessProps) {
   return <article className="container d-flex justify-content-center flex-wrap">
 
     <div className="row-cols-1">
-      <h1 className="title">You dont have access to this site.</h1>
+      <h1 className="title">You dont have access to this page.</h1>
     </div>
 
     <form onSubmit={props.handleAuthorization} className="col-10 access-code-form">
 
-      <TipMessage text={tipText}/>
+      <TipMessage text={tipText}>
+        <div className="input-group col-xl-6 col-sm-12">
+          <input type="text" autoFocus={true} value={props.inputText}  onChange={event => props.setText(event.target.value)} name="text"
+                 placeholder="Code" className=" col-xl-8  col-md-6  col-sm-10"/>
 
-      <div className="input-group col-xl-6 col-sm-12">
-        <input type="text" value={props.inputText} onChange={event => props.setText(event.target.value)} name="text"
-               placeholder="Code" className=" col-xl-8  col-md-6  col-sm-10"/>
-        <div className="input-group-append  col-xl-4  col-md-6  col-sm-10" id="button-addon4">
-          <SubmitButton/>
+          <div className="input-group-append  col-xl-4  col-md-6  col-sm-10" id="button-addon4">
+            <SubmitButton/>
+          </div>
         </div>
-      </div>
+      </TipMessage>
 
       {
         <article>
