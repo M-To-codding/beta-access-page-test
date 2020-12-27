@@ -1,0 +1,48 @@
+.slick-carousel {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slick-dots {
+  bottom: 5%;
+
+  button {
+    width: 25px;
+    height: 5px;
+  }
+
+  button:before {
+    width: 25px !important;
+    height: 5px !important;
+    border: 0;
+    content: '' !important;
+    outline: none;
+    background: white;
+  }
+}
+
+.slick-slider {
+  height: 450px;
+  overflow: hidden;
+
+  .slider-item {
+    position: relative;
+    height: 450px;
+  }
+
+  .caption {
+    font-size: 75px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    top: 40%;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  img {
+    width: auto;
+  }
+}

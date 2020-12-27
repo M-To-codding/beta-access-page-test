@@ -1,3 +1,12 @@
+interface IImage {
+  id: string,
+  url: string
+}
+
+interface SlickImage extends IImage{
+  caption?: string
+}
+
 interface IPayload {
   isAuthorized?: boolean,
   codesList?: Array<string>,
@@ -11,6 +20,8 @@ interface IReduxAction {
   payload?: IPayload,
   error?: string
 }
+
+
 
 interface AuthState {
   loading: boolean,
