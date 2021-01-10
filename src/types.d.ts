@@ -3,7 +3,7 @@ interface IImage {
   url: string
 }
 
-interface SlickImage extends IImage{
+interface SlickImage extends IImage {
   caption?: string
 }
 
@@ -20,7 +20,6 @@ interface IReduxAction {
   payload?: IPayload,
   error?: string
 }
-
 
 
 interface AuthState {
@@ -63,3 +62,25 @@ interface UsersAction extends IReduxAction {
 }
 
 type DispatchUsers = (args: UsersAction) => UsersAction;
+
+interface IProduct {
+  id: string,
+  title: string,
+  description: string,
+  gallery: Array<string>,
+  isNew: boolean,
+  isBestPrice: boolean,
+  rate: number,
+  dateCreated: string
+}
+
+interface IPost {
+  id: string,
+  title: string,
+  description: string,
+  highlighted: boolean,
+  author: string,
+  dateCreated: string,
+  categories: Array<string>,
+  gallery: Array<string>
+}
