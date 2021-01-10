@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import Slider from "react-slick";
-import ProductCard from "./productCard";
 
 
 function Carousel() {
@@ -8,17 +7,17 @@ function Carousel() {
   const carouselData: Array<SlickImage> = [
     {
       id: '0',
-      url: 'https://cdn.shopify.com/s/files/1/0092/8186/3785/files/shutterstock_1026870943_40_adbde2c1-40ac-4473-9597-88fcfe30828b_1600x.jpg?v=1556022704',
+      url: 'https://images.pexels.com/photos/4058155/pexels-photo-4058155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       caption: 'The garden'
     },
     {
       id: '1',
-      url: 'https://m.media-amazon.com/images/I/81cyA6VfD9L._SL1500_.jpg',
+      url: 'https://images.pexels.com/photos/1903977/pexels-photo-1903977.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       caption: 'The garden'
     },
     {
       id: '2',
-      url: 'https://www.gardeningknowhow.com/wp-content/uploads/2007/03/flowers-1.jpg',
+      url: 'https://st3.depositphotos.com/11887942/14577/i/1600/depositphotos_145776925-stock-photo-gardening-tools-flowers-pots-white.jpg',
       caption: 'The garden'
     },
   ];
@@ -49,8 +48,6 @@ function Carousel() {
           })
         }
     </Slider>
-
-    <ProductCard/>
   </section>
 }
 

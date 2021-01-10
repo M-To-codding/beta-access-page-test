@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import ProductCard from "../../components/productCard";
+import ProductCard from "../../components/cards/productCard";
 
 function Store() {
   const [loading, setLoading] = useState(true);
