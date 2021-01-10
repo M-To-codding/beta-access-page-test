@@ -1,4 +1,4 @@
-export class Photo {
+export class Photo implements IPhoto{
   public large: string;
   public medium: string;
   public thumbnail: string;
