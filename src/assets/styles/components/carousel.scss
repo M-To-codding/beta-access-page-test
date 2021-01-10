@@ -23,12 +23,12 @@
 }
 
 .slick-slider {
-  height: 450px;
+  height: 650px;
   overflow: hidden;
 
   .slider-item {
     position: relative;
-    height: 450px;
+    height: 650px;
   }
 
   .caption {
@@ -44,5 +44,40 @@
 
   img {
     width: auto;
+  }
+}
+
+.slick-prev, .slick-next {
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  background-color: $white;
+  transition: 0.5s;
+
+  &:before {
+    color: black;
+    line-height: unset;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &:hover, &:focus {
+    background-color: $green;
+  }
+}
+
+.slick-prev {
+  left: 50px;
+
+  &:before {
+    content: '\2039';
+  }
+}
+
+.slick-next {
+  right: 50px;
+
+  &:before {
+    content: '\203A';
   }
 }
