@@ -11,6 +11,7 @@ interface IPayload {
   isAuthorized?: boolean,
   codesList?: Array<string>,
   usersList?: Array,
+  productsList?: Array,
   error?: {} | string,
   redirectTo?: string | null
 }
@@ -84,3 +85,14 @@ interface IPost {
   categories: Array<string>,
   gallery: Array<string>
 }
+
+interface ProductsState {
+  loading: boolean,
+  productsList: Array<IProduct>,
+  error: any
+}
+
+interface ProductsAction extends IReduxAction {
+}
+
+type DispatchProducts = (args: ProductsAction) => ProductsAction;
