@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import '../assets/styles/App.scss';
 import $ from 'jquery';
 import Popper from 'popper.js';
@@ -8,7 +10,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import {Route, Router, Switch} from 'react-router-dom';
 import {connect} from "react-redux";
 import Header from "../components/header";
-import store, {history} from "../redux/store";
+import {history} from "../redux/store";
 import DashboardContainer from "./dashboard/dashboardContainer";
 import BetaAccessContainer from "./betaAccess/betaAccessContainer";
 import Footer from "../components/footer";
@@ -16,6 +18,7 @@ import {checkAuthToken, logOut} from "../redux/actions/authActionCreators";
 import NotFound from "./notFound";
 import UsersListContainer from "./users/usersListContainer";
 import StoreContainer from "./store/storeContainer";
+import Home from "./home/home";
 
 interface AppProps {
   loading: boolean,
@@ -47,6 +50,7 @@ function App(props: AppProps) {
 
           <Switch>
             <Route exact={true} path="/" render={(props) => <DashboardContainer/>}/>
+            <Route exact={true} path="/home" render={(props) => <Home/>}/>
             <Route exact={true} path="/users" render={(props) => <UsersListContainer/>}/>
             <Route exact={true} path="/store" render={(props) => <StoreContainer/>}/>
             <Route exact={true} path="/access-denied" render={(props) => <BetaAccessContainer/>}/>
