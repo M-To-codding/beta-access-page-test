@@ -20,7 +20,9 @@ function Store() {
   }
 
   return <article className="container d-flex justify-content-center -padding-top80">
-    <ProductCard/>
+    <div className="row">
+      <ProductCard products={[]}/>
+    </div>
   </article>
 }
 
