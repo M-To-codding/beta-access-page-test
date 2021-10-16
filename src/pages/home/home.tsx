@@ -7,8 +7,10 @@ function Home() {
   return <article className="home-content">
     <Carousel/>
 
-    <section className="-padding-top80 -padding-bottom80">
-      <ProductCard/>
+    <section className="container -padding-top80 -padding-bottom80">
+      <div className="row">
+        <ProductCard products={[]}/>
+      </div>
     </section>
   </article>
 }
