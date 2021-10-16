@@ -5,7 +5,7 @@ import Loader from "../../components/loader";
 import {history} from "../../redux/store";
 import {authorizationFailure} from "../../redux/actions/authActionCreators";
 import {USER_NOT_AUTHORIZED} from "../../utils/errorTexts";
-import Home from "./home";
+import Home from "../home/home";
 
 interface DashboardProps {
   loading: boolean,
