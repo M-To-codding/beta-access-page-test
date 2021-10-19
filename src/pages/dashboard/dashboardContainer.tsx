@@ -5,7 +5,7 @@ import Loader from "../../components/loader";
 import {history} from "../../redux/store";
 import {authorizationFailure} from "../../redux/actions/authActionCreators";
 import {USER_NOT_AUTHORIZED} from "../../utils/errorTexts";
-import Home from "../home/home";
+import HomeContainer from "../home/homeContainer";
 
 interface DashboardProps {
   loading: boolean,
@@ -22,7 +22,7 @@ function DashboardContainer(props: DashboardProps) {
     return <Dashboard/>
   }
 
-  return <Home/>
+  return <HomeContainer/>
 }
 
 const mapStateToProps = (state: any) => ({
