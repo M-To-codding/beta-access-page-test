@@ -18,7 +18,7 @@ import {checkAuthToken, logOut} from "../redux/actions/authActionCreators";
 import NotFound from "./notFound";
 import UsersListContainer from "./users/usersListContainer";
 import StoreContainer from "./store/storeContainer";
-import Home from "./home/home";
+import HomeContainer from "./home/homeContainer";
 
 interface AppProps {
   loading: boolean,
@@ -50,7 +50,7 @@ function App(props: AppProps) {
 
           <Switch>
             <Route exact={true} path="/" render={(props) => <DashboardContainer/>}/>
-            <Route exact={true} path="/home" render={(props) => <Home/>}/>
+            <Route exact={true} path="/home" render={(props) => <HomeContainer/>}/>
             <Route exact={true} path="/users" render={(props) => <UsersListContainer/>}/>
             <Route exact={true} path="/store" render={(props) => <StoreContainer/>}/>
             <Route exact={true} path="/access-denied" render={(props) => <BetaAccessContainer/>}/>
