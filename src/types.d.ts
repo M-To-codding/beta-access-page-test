@@ -88,7 +88,7 @@ interface IPost {
 
 interface ProductsState {
   loading: boolean,
-  productsList: Array<IProduct>,
+  productsList: Array<IProduct> | null,
   error: any
 }
 
