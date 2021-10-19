@@ -1,4 +1,5 @@
 import React from "react";
+import ProductCarousel from "../productCarousel";
 
 
 interface ProductCardProps {
@@ -12,10 +13,25 @@ function ProductCard(props: ProductCardProps) {
   }
 
   let productGallery = props.product.gallery;
+  handleImageGallery();
+
+  function handleImageGallery() {
+    const carouselData: Array<SlickImage> = [];
+    productGallery.forEach((imgItem: string, index: number) => {
+      carouselData.push({
+          id: `${index}`,
+          url: imgItem,
+          caption: props.product?.title
+        }
+      );
+    });
+
+    return carouselData;
+  }
 
   return (
     <section className="col-xl-4 col-md-4">
-      <div className="card bg-light">
+      <div className="product-card bg-light">
 
         {productGallery.length <= 1 &&
         <img className="card-img-top"
@@ -28,31 +44,30 @@ function ProductCard(props: ProductCardProps) {
         }
 
         {productGallery.length > 1 &&
-        productGallery.map((imgItem) => {
-          return <img className="card-img-top"
-                      src={imgItem}
-                      alt="Card image cap"/>
-        })
+          <ProductCarousel carouselData={handleImageGallery()}/>
+        }
+
+        {props.product?.isNew &&
+        <p className="product-new-label">
+          New!
+        </p>
+        }
+        {props.product?.isBestPrice &&
+        <p className="product-best-price-label">
+          Best price!
+        </p>
         }
 
         <div className="card-body">
-          {props.product?.isNew &&
-          <p className="product-new-label">
-            New!
-          </p>
-          }
-          {props.product?.isBestPrice &&
-          <p className="product-best-price-label">
-            Best price!
-          </p>
-          }
-          <h5 className="card-title">
+          <h5 className="product-card-title">
             {props.product?.title}
           </h5>
-          <p className="card-text">
+          <p className="product-card-description">
             {props.product?.description}
           </p>
         </div>
+
+        <button type="button" className="btn btn-dark go-to-product-btn">Read more</button>
       </div>
     </section>
   )
