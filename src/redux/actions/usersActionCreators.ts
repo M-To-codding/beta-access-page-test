@@ -13,8 +13,6 @@ export function fetchUsers(limit: number = 10) {
     await axios.get(
       `https://randomuser.me/api/?results=${limit}`
     ).then((usersData: AxiosResponse) => {
-      console.log('AxiosResponse');
-      console.log(usersData);
       if (usersData != null) {
         dispatch(fetchUsersListSuccess(usersData));
       }
@@ -39,8 +37,6 @@ function fetchUsersListRequest(): UsersAction {
 }
 
 function fetchUsersListSuccess(usersData: any): UsersAction {
-  console.log('payload');
-  console.log(usersData);
   const action: UsersAction = {
     type: FETCH_USERS_SUCCESS,
     payload: {usersList: usersData.data?.results}
