@@ -36,6 +36,16 @@ function ProductCard(props: ProductCardProps) {
         }
 
         <div className="card-body">
+          {props.product?.isNew &&
+          <p className="product-new-label">
+            New!
+          </p>
+          }
+          {props.product?.isBestPrice &&
+          <p className="product-best-price-label">
+            Best price!
+          </p>
+          }
           <h5 className="card-title">
             {props.product?.title}
           </h5>
