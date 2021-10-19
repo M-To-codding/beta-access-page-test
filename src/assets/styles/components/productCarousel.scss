@@ -1,0 +1,84 @@
+.slick-product-carousel-content {
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.slick-product-carousel {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  height: 250px;
+
+  .slider-item {
+    position: relative;
+    height: 650px;
+  }
+
+  .caption {
+    font-size: 75px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    top: 40%;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  img {
+    width: auto;
+  }
+}
+
+.slick-dots {
+  bottom: 5%;
+
+  button {
+    width: 25px;
+    height: 5px;
+  }
+
+  button:before {
+    width: 25px !important;
+    height: 5px !important;
+    border: 0;
+    content: '' !important;
+    outline: none;
+    background: white;
+  }
+}
+
+.slick-prev, .slick-next {
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  background-color: $white;
+  transition: 0.5s;
+
+  &:before {
+    color: black;
+    line-height: unset;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &:hover, &:focus {
+    background-color: $green;
+  }
+}
+
+.slick-prev {
+  left: 50px;
+
+  &:before {
+    content: '\2039';
+  }
+}
+
+.slick-next {
+  right: 50px;
+
+  &:before {
+    content: '\203A';
+  }
+}
