@@ -44,7 +44,7 @@ function ProductCard(props: ProductCardProps) {
         }
 
         {productGallery.length > 1 &&
-          <ProductCarousel carouselData={handleImageGallery()}/>
+        <ProductCarousel carouselData={handleImageGallery()}/>
         }
 
         {props.product?.isNew &&
@@ -67,7 +67,10 @@ function ProductCard(props: ProductCardProps) {
           </p>
         </div>
 
-        <button type="button" className="btn btn-dark go-to-product-btn">Read more</button>
+        <div className="card-footer">
+          <button type="button" className="btn btn-dark go-to-product-btn">Read more</button>
+        </div>
+
       </div>
     </section>
   )
