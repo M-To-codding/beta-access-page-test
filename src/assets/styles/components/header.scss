@@ -15,10 +15,20 @@
 }
 
 .header-contacts {
+  opacity: 1;
+  height: 55px;
   display: flex;
   justify-content: space-between;
   padding: 10px 14px;
   align-items: center;
+  transition: 0.5s;
+
+  &.-collapsed {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    transition: 0.5s;
+  }
 }
 
 .contacts-list-item {
