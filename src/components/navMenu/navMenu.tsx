@@ -1,13 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
 interface NavMenuProps {
   auth: boolean,
-  logOut: any
+  logOut: any,
+  isNavCollapsed: boolean
 }
 
 function NavMenu(props: NavMenuProps) {
-
   return <nav className="navbar navbar-expand navbar-light nav-menu">
 
     <Link to="/" className="col-lg-2 col-md-2">
