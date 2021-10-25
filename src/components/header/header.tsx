@@ -1,18 +1,19 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import NavMenu from "./navMenu/navMenu";
-import SocialLinks from "./socialLinks";
+import NavMenu from "../navMenu/navMenu";
+import SocialLinks from "../socialLinks";
 
 
 interface HeaderProps {
   auth: boolean,
-  logOut: any
+  logOut: any,
+  isNavCollapsed: boolean
 }
 
 function Header(props: HeaderProps) {
   return <header className="header">
 
-    <article className="container header-contacts">
+    <article className={`container header-contacts ${props.isNavCollapsed ? '-collapsed' : ''}`}>
       <Link to="/" className="logo">
         <h1>Logo</h1>
       </Link>
@@ -40,7 +41,7 @@ function Header(props: HeaderProps) {
       <SocialLinks/>
     </article>
 
-    <NavMenu auth={props.auth} logOut={props.logOut}/>
+    <NavMenu auth={props.auth} logOut={props.logOut} isNavCollapsed={props.isNavCollapsed}/>
 
   </header>
 }
