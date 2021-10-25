@@ -9,7 +9,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import {Route, Router, Switch} from 'react-router-dom';
 import {connect} from "react-redux";
-import Header from "../components/header";
 import {history} from "../redux/store";
 import DashboardContainer from "./dashboard/dashboardContainer";
 import BetaAccessContainer from "./betaAccess/betaAccessContainer";
@@ -19,6 +18,7 @@ import NotFound from "./notFound";
 import UsersListContainer from "./users/usersListContainer";
 import StoreContainer from "./store/storeContainer";
 import HomeContainer from "./home/homeContainer";
+import HeaderContainer from "../components/header/headerContainer";
 
 interface AppProps {
   loading: boolean,
@@ -46,7 +46,7 @@ function App(props: AppProps) {
       <div className="-padding-top80"/>
       <Router history={history}>
         <>
-          <Header auth={props.isAuthorized} logOut={props.logOut}/>
+          <HeaderContainer auth={props.isAuthorized} logOut={props.logOut}/>
 
           <Switch>
             <Route exact={true} path="/" render={(props) => <DashboardContainer/>}/>
