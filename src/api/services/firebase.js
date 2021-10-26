@@ -3,7 +3,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth"
 import "firebase/compat/firestore"
 // import getAnalytics from "firebase/analytics";
-import {collection, getDocs} from "firebase/firestore";
+import {collection, getDocs, query, limit} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,8 +26,8 @@ firebase.initializeApp(firebaseConfig);
 export const firebaseAuth = firebase.auth();
 export const db = firebase.firestore();
 
-export async function getProducts(db) {
-  const productsCol = collection(db, 'products');
+export async function getProducts(db, count = 5) {
+  const productsCol = query(collection(db, 'products'), limit(count));
   const productSnapshot = await getDocs(productsCol);
   const productsList = productSnapshot.docs.map(doc => doc.data());
   return productsList;
