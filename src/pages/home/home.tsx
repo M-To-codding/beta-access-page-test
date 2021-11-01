@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "../../components/carousel";
 import ProductCard from "../../components/cards/productCard";
+import OffersCarouselContainer from "../../components/offers/offersCarouselContainer";
 
 
 interface AppProps {
@@ -41,20 +42,6 @@ function buildProductsStoreBtn() {
   return block;
 }
 
-function buildProductsList(props: AppProps) {
-  let productsList: any[] = [];
-  props.productsList.forEach((item, index) => {
-    if (index === 1) {
-      productsList.push(buildProductsStoreBtn());
-      productsList.push(item);
-    } else {
-      productsList.push(item);
-    }
-  })
-
-  return productsList;
-}
-
 function Home(props: AppProps) {
 
   if (!props.productsList || props.productsList.length === 0) {
@@ -67,7 +54,8 @@ function Home(props: AppProps) {
     </article>
   }
 
-  let productsList: any[] = buildProductsList(props);
+  let productsList: any[] = props.productsList;
+  let productsStoreBtn: any = buildProductsStoreBtn();
 
   return <article className="home-content">
     <Carousel/>
@@ -77,14 +65,20 @@ function Home(props: AppProps) {
         {
           (props.productsList && props.productsList.length > 0) &&
           productsList.map((item: IProduct, index: number) => {
-            if (index === 1) {
-              return item;
+            if (index === 0) {
+              return <>
+                <ProductCard product={item}/>
+                {productsStoreBtn}
+              </>;
             }
             return <ProductCard product={item}/>;
           })
         }
       </div>
+
     </section>
+
+    <OffersCarouselContainer/>
   </article>
 }
 
