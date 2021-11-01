@@ -13,7 +13,6 @@ function ProductCard(props: ProductCardProps) {
   }
 
   let productGallery = props.product.gallery;
-  handleImageGallery();
 
   function handleImageGallery() {
     const carouselData: Array<SlickImage> = [];
