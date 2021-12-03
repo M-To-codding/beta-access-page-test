@@ -1,9 +1,9 @@
 import React from "react";
-import OffersCarousel from "./offersCarousel";
+import OffersList from "./offersList";
 
 
-function OffersCarouselContainer() {
-  return <OffersCarousel/>
+function OffersListContainer() {
+  return <OffersList/>
 }
 
-export default OffersCarouselContainer;
+export default OffersListContainer;

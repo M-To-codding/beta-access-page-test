@@ -2,9 +2,9 @@ import React from "react";
 import ProductCarousel from "../productCarousel";
 
 
-function OffersCarousel() {
+function OffersList() {
 
-  const slickData = [
+  const offersData = [
     {
       id: '0',
       url: 'https://sgi2.offerscdn.net/i/production/published/65/filename/14983.flim.v63.bffffff.jpg',
@@ -19,16 +19,31 @@ function OffersCarousel() {
 
   return <article className="flex-column justify-content-center offers-content -padding-bottom80">
     <section className="d-flex flex-row offers-list">
-      <ProductCarousel carouselData={slickData} carouselClassName="offers-carousel-content" slidesToShow={2} autoplay={false} caption={true}/>
+      {/*<ProductCarousel carouselData={slickData} carouselClassName="offers-carousel-content" slidesToShow={2} autoplay={false} caption={true}/>*/}
+      <div className="offers-content">
+        {
+          offersData.map((item) => {
+            return <div key={item.id} className="offers-item">
+              <div className="offers-item-img">
+                <img src={item.url} alt=""/>
+              </div>
+
+              <a href="#" className="caption-link">
+                <h4 className="caption">{item.caption}</h4>
+              </a>
+            </div>
+          })
+        }
+      </div>
     </section>
 
-    <a href="#">
+    <a href="#" className="link-wrapper">
       <section className="flex-row justify-content-between link-to-offers">
         <div className="img-small-circle">
           <img
             src="https://imgs.michaels.com/MAM/assets/1/726D45CA1C364650A39CD1B336F03305/img/30402E408CEC494B8197AFC3E8ECAFAB/28529_32606328.jpg?fit=inside|1024:1024"
             alt=""/>
-            <div className="top-img-box-shadow"></div>
+          <div className="top-img-box-shadow"></div>
         </div>
 
         <p className="offers-link-text">
@@ -46,4 +61,4 @@ function OffersCarousel() {
   </article>
 }
 
-export default OffersCarousel;
+export default OffersList;
