@@ -28,6 +28,7 @@ function OffersCarousel() {
           <img
             src="https://imgs.michaels.com/MAM/assets/1/726D45CA1C364650A39CD1B336F03305/img/30402E408CEC494B8197AFC3E8ECAFAB/28529_32606328.jpg?fit=inside|1024:1024"
             alt=""/>
+            <div className="top-img-box-shadow"></div>
         </div>
 
         <p className="offers-link-text">
@@ -38,6 +39,7 @@ function OffersCarousel() {
           <img width="auto"
                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLf9FbqfyHSq-TQNZoiP3BwpBsMvgl-cWFKpFRYOO2opd_-nTt23aZfNWjbGwh2zrlvmI&usqp=CAU"
                alt=""/>
+          <div className="top-img-box-shadow"></div>
         </div>
       </section>
     </a>
