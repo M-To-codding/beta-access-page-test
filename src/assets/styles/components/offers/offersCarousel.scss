@@ -1,27 +1,22 @@
 .offers-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-}
+  .offers-item {
+    height: 100%;
+    width: 50%;
 
-.offers-carousel-content {
-  max-height: 500px;
-  min-height: 300px;
-  height: 100vh;
-
-  .slick-product-carousel {
-    height: auto;
-  }
-
-  .slick-slide {
-    &:nth-child(even) .slider-item:after {
+    &:nth-child(even) .offers-item-img:after {
       background-color: rgba(50, 50, 50, 0.66);
     }
 
-    &:nth-child(odd) .slider-item:after {
+    &:nth-child(odd) .offers-item-img:after {
       background-color: rgba(255, 255, 255, 0.66);
     }
   }
 
-  .slider-item {
+  .offers-item-img {
     position: relative;
 
     &:after {
@@ -41,7 +36,7 @@
     display: block;
     z-index: 3;
     position: relative;
-    transform: rotate(90deg) translate(11em, -12em);
+    transform: rotate(90deg) translate(11em, 0);
   }
 
   .caption {
@@ -58,10 +53,14 @@
   margin-bottom: -3em;
 }
 
+.link-wrapper {
+  width: 100%;
+}
+
 .link-to-offers {
   display: flex;
-  box-shadow: 0 0 9px 3px #cfcfcf;
-  border-radius: 6px;
+  box-shadow: 0 0 13px 3px #48484859;
+  border-radius: 50px;
   padding: 20px;
   width: 40%;
   margin: auto;
@@ -72,7 +71,7 @@
 }
 
 .img-small-circle {
-  box-shadow: 0 0 9px 3px #cfcfcf;
+  position: relative;
   border-radius: 50%;
   overflow: hidden;
   height: 70px;
