@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "../../components/carousel";
 import ProductCard from "../../components/cards/productCard";
-import OffersCarouselContainer from "../../components/offers/offersCarouselContainer";
+import OffersListContainer from "../../components/offers/offersListContainer";
 
 
 interface AppProps {
@@ -78,7 +78,7 @@ function Home(props: AppProps) {
 
     </section>
 
-    <OffersCarouselContainer/>
+    <OffersListContainer/>
   </article>
 }
 
