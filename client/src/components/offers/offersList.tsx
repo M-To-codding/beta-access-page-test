@@ -4,7 +4,7 @@ import ProductCarousel from "../productCarousel";
 
 function OffersList() {
 
-  const offersData = [
+  const offersData:any = [
     {
       id: '0',
       url: 'https://sgi2.offerscdn.net/i/production/published/65/filename/14983.flim.v63.bffffff.jpg',
@@ -22,7 +22,7 @@ function OffersList() {
       {/*<ProductCarousel carouselData={slickData} carouselClassName="offers-carousel-content" slidesToShow={2} autoplay={false} caption={true}/>*/}
       <div className="offers-content">
         {
-          offersData.map((item) => {
+          offersData.map((item: any) => {
             return <div key={item.id} className="offers-item">
               <div className="offers-item-img">
                 <img src={item.url} alt=""/>

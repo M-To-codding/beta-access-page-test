@@ -13,7 +13,7 @@ interface BetaAccessProps {
 function BetaAccess(props: BetaAccessProps) {
   let errorMessage = props.error;
   let inputErrorMessage = props.inputError;
-  let tipText = ' If you have access code, place it to this input and tap a button';
+  let tipText = ' If you have access code, place it into input and tap a button';
 
   return <article className="container d-flex justify-content-center flex-wrap">
 

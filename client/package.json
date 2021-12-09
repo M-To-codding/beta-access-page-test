@@ -1,5 +1,5 @@
 {
-  "name": "beta-access-test",
+  "name": "simple-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
