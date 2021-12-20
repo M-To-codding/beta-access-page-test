@@ -10,6 +10,7 @@ import 'express-async-errors';
 import BaseRouter from './routes';
 import logger from '@shared/Logger';
 import { cookieProps } from '@shared/constants';
+import { getAllProducts } from "./routes/Products";
 
 const app = express();
 const { BAD_REQUEST } = StatusCodes;
@@ -19,6 +20,7 @@ const { BAD_REQUEST } = StatusCodes;
 /************************************************************************************
  *                              Set basic express settings
  ***********************************************************************************/
+const db = require('./config/database');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -57,9 +59,7 @@ app.set('views', viewsDir);
 const staticDir = path.join(__dirname, 'public');
 app.use(express.static(staticDir));
 
-app.get('/', (req: Request, res: Response) => {
-    res.sendFile('login.html', {root: viewsDir});
-});
+app.get('/', getAllProducts);
 
 app.get('/users', (req: Request, res: Response) => {
     const jwt = req.signedCookies[cookieProps.key];
