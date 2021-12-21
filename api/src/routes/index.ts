@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { adminMW } from './middleware';
 import { login, logout } from './Auth';
-import { getAllUsers, addOneUser, updateOneUser, deleteOneUser } from './Users';
+import { getAllProducts, addOneProduct } from './Products';
 
 
 // Auth router
@@ -10,15 +10,17 @@ authRouter.post('/login', login);
 authRouter.get('/logout', logout);
 
 
-// User-router
-const userRouter = Router();
-userRouter.get('/all', getAllUsers);
-userRouter.post('/add', addOneUser);
-userRouter.put('/update', updateOneUser);
-userRouter.delete('/delete/:id', deleteOneUser);
+// Product-router
+const productRouter = Router();
+productRouter.get('/', getAllProducts);
+productRouter.post('/add', addOneProduct);
+// productRouter.put('/update', updateOneProduct);
+// productRouter.delete('/delete/:id', deleteOneProduct);
 
 // Export the base-router
 const baseRouter = Router();
 baseRouter.use('/auth', authRouter);
-baseRouter.use('/users', adminMW, userRouter);
+baseRouter.use('/home', productRouter);
+baseRouter.use('/store', productRouter);
+baseRouter.use('/admin', adminMW, productRouter);
 export default baseRouter;
