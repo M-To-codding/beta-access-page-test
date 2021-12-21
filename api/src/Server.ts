@@ -10,7 +10,6 @@ import 'express-async-errors';
 import BaseRouter from './routes';
 import logger from '@shared/Logger';
 import { cookieProps } from '@shared/constants';
-import { getAllProducts } from "./routes/Products";
 
 const app = express();
 const { BAD_REQUEST } = StatusCodes;
@@ -37,7 +36,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Add APIs
-app.use('/api', BaseRouter);
+app.use('/api/v1', BaseRouter);
 
 // Print API errors
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -54,21 +53,21 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
  *                              Serve front-end content
  ***********************************************************************************/
 
-const viewsDir = path.join(__dirname, 'views');
-app.set('views', viewsDir);
-const staticDir = path.join(__dirname, 'public');
-app.use(express.static(staticDir));
+// const viewsDir = path.join(__dirname, 'views');
+// app.set('views', viewsDir);
+// const staticDir = path.join(__dirname, 'public');
+// app.use(express.static(staticDir));
 
-app.get('/', getAllProducts);
+// app.get('/', getAllProducts);
 
-app.get('/users', (req: Request, res: Response) => {
-    const jwt = req.signedCookies[cookieProps.key];
-    if (!jwt) {
-        res.redirect('/');
-    } else {
-        res.sendFile('users.html', {root: viewsDir});
-    }
-});
+// app.get('/users', (req: Request, res: Response) => {
+//     const jwt = req.signedCookies[cookieProps.key];
+//     if (!jwt) {
+//         res.redirect('/');
+//     } else {
+//         res.sendFile('users.html', {root: viewsDir});
+//     }
+// });
 
 
 
