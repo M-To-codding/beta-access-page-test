@@ -1,12 +1,11 @@
 import bcrypt from 'bcrypt';
-import { Request, Response, Router } from 'express';
+import {Request, Response} from 'express';
 import StatusCodes from 'http-status-codes';
 
-import UserDao from '@daos/User/UserDao.mock';
-import { JwtService } from '@shared/JwtService';
-import { paramMissingError, loginFailedErr, cookieProps } from '@shared/constants';
+import {JwtService} from '@shared/JwtService';
+import {cookieProps, loginFailedErr, paramMissingError} from '@shared/constants';
 
-const userDao = new UserDao();
+
 const jwtService = new JwtService();
 const { BAD_REQUEST, OK, UNAUTHORIZED } = StatusCodes;
 
@@ -27,8 +26,12 @@ export async function login(req: Request, res: Response) {
             error: paramMissingError,
         });
     }
-    // Fetch user
-    const user = await userDao.getOne(email);
+    // TODO: handle fetch user when auth handling will be added
+    // const user = await userDao.getOne(email);
+
+    //TODO: remove tmp data when auth handling will be added
+    //tmp data
+     const user:any = {};
     if (!user) {
         return res.status(UNAUTHORIZED).json({
             error: loginFailedErr,
