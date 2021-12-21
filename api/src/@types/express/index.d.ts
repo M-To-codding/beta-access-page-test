@@ -1,22 +1,11 @@
-import { IUser } from '@entities/User';
-import { IClientData } from '@shared/JwtService';
-
-
-declare module 'express' {
-    export interface Request  {
-        body: {
-            user: IUser
-            email: string;
-            password: string;
-        };
-    }
-}
+import {IClientData} from '@shared/JwtService';
+import {IProduct} from "@entities/Product";
 
 
 declare global {
-    namespace Express {
-        export interface Response {
-            sessionUser: IClientData;
-        }
+  namespace Express {
+    export interface Response {
+      sessionUser: IClientData;
     }
+  }
 }
