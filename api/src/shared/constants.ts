@@ -3,6 +3,9 @@
 export const paramMissingError = 'One or more of the required parameters was missing.';
 export const loginFailedErr = 'Login failed';
 
+// ---- Products
+export const EMPTY_OR_MISSED_DATA = 'Data is empty or required parameters was missing.';
+
 // Numbers
 export const pwdSaltRounds = 12;
 
