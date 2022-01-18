@@ -6,13 +6,13 @@ import {
 } from "../../constants/productsConstants";
 import axios, {AxiosResponse} from "axios";
 
-import {getProducts, db} from "../../../api/services/firebase";
+import {getProducts} from "../../../api/services/productsApiMethods";
 
 export function getProductsActionCreators(limit: number = 6) {
   return async (dispatch: DispatchProducts) => {
     dispatch(fetchProductsListRequest());
 
-    await getProducts(db).then((products) => {
+    await getProducts().then((products) => {
       if (products != null) {
         dispatch(fetchProductsListSuccess(products));
       }
