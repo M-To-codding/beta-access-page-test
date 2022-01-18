@@ -1,6 +1,6 @@
 import StatusCodes from "http-status-codes";
 import {Request, Response} from "express";
-import Product from "@entities/Product";
+import Product, {IProduct} from "@entities/Product";
 import {EMPTY_OR_MISSED_DATA} from "@shared/constants";
 
 const { BAD_REQUEST, CREATED, OK } = StatusCodes;
@@ -12,8 +12,11 @@ const { BAD_REQUEST, CREATED, OK } = StatusCodes;
  * @param res
  * @returns
  */
+
 export async function getAllProducts(req: Request, res: Response) {
-  const products = await Product.find({});
+  const {query} = req;
+  const count:number = query.count ? parseInt(query.count.toString()) : 10;
+  const products = await Product.find({}).sort('-date').skip(0).limit(count);
   return res.status(OK).json({products});
 }
 
