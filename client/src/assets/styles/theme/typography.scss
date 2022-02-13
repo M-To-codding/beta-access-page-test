@@ -4,6 +4,7 @@ h1 {
 
 h2 {
   @include fluid-type($min_width, $max_width, map-get($fonts-sizes, h2-min), map-get($fonts-sizes, h2));
+  font-family: 'charlotte', sans-serif;
 }
 
 h3 {
@@ -38,3 +39,18 @@ h6 {
   }
 }
 
+.-font-size-40 {
+  font-size: 40px;
+}
+
+.-green-text {
+  font-family: inherit;
+  font-size: inherit;
+  color: $green;
+}
+
+.-light-text {
+  font-family: inherit;
+  font-size: inherit;
+  color: $light-gray;
+}
