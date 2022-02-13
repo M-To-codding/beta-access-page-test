@@ -32,7 +32,7 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      border-radius: map-get($border-radius, 50 p);
+      border-radius: map-get($border-radius, '50p');
       text-align: center;
       color: white;
       z-index: 1;
@@ -46,7 +46,7 @@
       margin: auto;
       left: 0;
       padding: 0.5em;
-      border-radius: map-get($border-radius, 6px);
+      border-radius: map-get($border-radius, '20px');
       background-color: $best-price-label-orange;
     }
 
