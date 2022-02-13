@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 
   .offers-item {
     height: 100%;
     width: 50%;
+    position: relative;
 
     &:nth-child(even) .offers-item-img:after {
       background-color: rgba(50, 50, 50, 0.66);
@@ -35,7 +37,8 @@
   .caption-link {
     display: block;
     z-index: 3;
-    position: relative;
+    position: absolute;
+    top: 0;
     transform: rotate(90deg) translate(11em, 0);
   }
 
@@ -51,6 +54,7 @@
   max-height: 500px;
   overflow: hidden;
   margin-bottom: -3em;
+  width: 100%;
 }
 
 .link-wrapper {
