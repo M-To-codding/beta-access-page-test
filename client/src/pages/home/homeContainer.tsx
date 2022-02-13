@@ -2,9 +2,7 @@ import React, {useEffect} from "react";
 import Dashboard from "../dashboard/dashboard";
 import {connect} from "react-redux";
 import Loader from "../../components/loader";
-import {history} from "../../redux/store";
 import {authorizationFailure} from "../../redux/actions/authActionCreators";
-import {USER_NOT_AUTHORIZED} from "../../utils/errorTexts";
 import Home from "./home";
 import {getProductsActionCreators} from "../../redux/actions/products/getProductsActionCreators";
 
