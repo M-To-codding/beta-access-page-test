@@ -8,17 +8,17 @@ function Carousel() {
     {
       id: '0',
       url: 'https://images.pexels.com/photos/4058155/pexels-photo-4058155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      caption: 'The garden'
+      caption: 'Lots of Succulents and Plants'
     },
     {
       id: '1',
       url: 'https://images.pexels.com/photos/1903977/pexels-photo-1903977.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      caption: 'The garden'
+      caption: ' Find the Perfect Plant'
     },
     {
       id: '2',
       url: 'https://st3.depositphotos.com/11887942/14577/i/1600/depositphotos_145776925-stock-photo-gardening-tools-flowers-pots-white.jpg',
-      caption: 'The garden'
+      caption: 'New Arrivals'
     },
   ];
 
@@ -42,7 +42,7 @@ function Carousel() {
         {
           carouselData.map((item) => {
             return <div key={'img' + item.id} className="slider-item">
-              <h2 className="caption">The garden</h2>
+              <h2 className="caption">{item.caption}</h2>
               <img className="d-block w-100" src={item.url} alt="First slide"/>
             </div>;
           })
