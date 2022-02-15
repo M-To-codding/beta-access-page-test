@@ -1,5 +1,5 @@
 import React from "react";
-import SubmitButton from "../../components/submitButton";
+import SubmitButton from "../../components/buttons/submitButton";
 import TipMessage from "../../components/tipMessage";
 
 interface BetaAccessProps {

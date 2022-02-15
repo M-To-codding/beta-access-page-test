@@ -1,45 +1,13 @@
 import React from "react";
+import YouTube from "react-youtube";
 import Carousel from "../../components/carousel";
 import ProductCard from "../../components/cards/productCard";
 import OffersListContainer from "../../components/offers/offersListContainer";
-import {Switch} from "react-router-dom";
-import YouTube from "react-youtube";
+import StoreButtonBanner from "../../components/buttons/storeButtonBanner";
 
 
 interface AppProps {
-  // loading: boolean,
-  //   // isAuthorized: boolean,
-  //   // error: {},
-  //   // checkAuthToken: any,
-  //   // logOut: any
   productsList: IProduct[],
-}
-
-// TODO: refactoring -> replace layout into component
-function buildProductsStoreBtn() {
-  return <section
-    className="col-xl-4 col-md-4 d-flex flex-column align-items-center justify-content-center go-to-store-banner">
-    <div className="product-card">
-      <header className="product-card-title text-center">
-        <h2>Our Products</h2>
-      </header>
-      <div className="card-body text-center">
-        <div className="product-banner">
-          <div className=" banner-img ">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmafIbmNG9qV39DoY1cAlhHJ1HQVhKYpsWiLvtpcvGkx9XNT-2RtVzRczHTkHpun3PnwM&usqp=CAU"
-              alt=""/>
-          </div>
-          <p>Lorem ipsum dolor sit amet asd qwerty</p>
-        </div>
-      </div>
-      <div className="card-footer">
-        <button className="btn btn-success go-to-product-btn">
-          Go to store
-        </button>
-      </div>
-    </div>
-  </section>;
 }
 
 function Home(props: AppProps) {
@@ -55,7 +23,6 @@ function Home(props: AppProps) {
   }
 
   let productsList: any[] = props.productsList;
-  let productsStoreBtn: any = buildProductsStoreBtn();
 
   const options: any = {
     height: '450',
@@ -76,7 +43,7 @@ function Home(props: AppProps) {
             if (index === 0) {
               return <>
                 <ProductCard product={item}/>
-                {productsStoreBtn}
+                <StoreButtonBanner/>
               </>;
             }
             return <ProductCard product={item}/>;
