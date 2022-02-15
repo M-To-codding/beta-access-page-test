@@ -17,7 +17,7 @@ function OffersList() {
     }
   ]
 
-  return <article className="flex-column justify-content-center offers-content -padding-bottom80">
+  return <article className="flex-column justify-content-center offers-content -padding-bottom80 -padding-top80 container">
     <section className="d-flex flex-row offers-list">
       {/*<ProductCarousel carouselData={slickData} carouselClassName="offers-carousel-content" slidesToShow={2} autoplay={false} caption={true}/>*/}
       <div className="offers-content">
@@ -29,7 +29,7 @@ function OffersList() {
               </div>
 
               <a href="#" className="caption-link">
-                <h4 className="caption">{item.caption}</h4>
+                <h4 className="caption -light-text">{item.caption}</h4>
               </a>
             </div>
           })
