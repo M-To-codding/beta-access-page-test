@@ -8,6 +8,7 @@ import SpecialGiftOffer from "../../components/specialGiftOffer";
 import VideoBanner from "../../components/videoBanner";
 import RecentNewsList from "../../components/recentNewsList";
 import InstagramPhotosList from "../../components/instagramPhotosList";
+import SubscriptionForm from "../../components/subscriptionForm";
 
 
 interface AppProps {
@@ -46,7 +47,6 @@ function Home(props: AppProps) {
           })
         }
       </div>
-
     </section>
 
     <SpecialGiftOffer/>
@@ -54,21 +54,7 @@ function Home(props: AppProps) {
     <VideoBanner/>
     <RecentNewsList/>
     <InstagramPhotosList/>
-
-    {/* Subscription block*/}
-
-    <section className="bg-light -padding-top60 -padding-bottom60">
-      <div className="container">
-        <form className="d-flex justify-content-center">
-          <label>
-            <input className="form-control" type="text" placeholder="Enter your email" name="email"/>
-          </label>
-          <button className="btn btn-dark" type="button" value="Subscribe">Subscribe</button>
-        </form>
-      </div>
-    </section>
-
-    {/* /Subscription block*/}
+    <SubscriptionForm/>
 
   </article>;
 }
