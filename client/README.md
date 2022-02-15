@@ -1,16 +1,29 @@
 ----
+* Fist of all, create file .env.development.local in __client__ directory and paste below strings there:
 
-* Fist of all, create file .env.development.local in root directory and paste below string there 
-(its needs for fetching existing codes for authorization):
-
+   // needs for fetching existing codes for authorization
    #### `REACT_APP_MOCK_API_KEY =da3a04b6`
+   //nodejs server api, needs for getting products
+   #### `REACT_APP_API_PRODUCTS_LIST=http://localhost:5000/api/v1/home/`
   
 * Authorization code stores in cookies.
-  
-* Website looks like simple web page with nav menu and footer. 
-In nav menu implemented logout and random users list with styled and adaptive layout. 
 
-----
+  #### Run command in folder __client__:
+    
+        npm start
+
+---------------------------
+  
+* Then go to the __api__ directory and place into directory __pre-start__ folder __env__ from archive. 
+Here must be files: __development.env__, __production.env__, __test.env__ with constants for ## MongoDb ##
+
+  #### Run command in folder __api__:
+    
+        npm run start:dev
+
+
+----------------------------
+
 
 # Getting Started with Create React App
 
