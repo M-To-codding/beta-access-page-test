@@ -5,6 +5,7 @@ import ProductCard from "../../components/cards/productCard";
 import OffersListContainer from "../../components/offers/offersListContainer";
 import StoreButtonBanner from "../../components/buttons/storeButtonBanner";
 import SpecialGiftOffer from "../../components/specialGiftOffer";
+import VideoBanner from "../../components/videoBanner";
 
 
 interface AppProps {
@@ -24,14 +25,6 @@ function Home(props: AppProps) {
   }
 
   let productsList: any[] = props.productsList;
-
-  const options: any = {
-    height: '450',
-    width: '100%',
-    playerVars: {
-      autoplay: 1,
-    },
-  };
 
   return <article className="home-content">
     <Carousel/>
@@ -56,15 +49,7 @@ function Home(props: AppProps) {
 
     <SpecialGiftOffer/>
     <OffersListContainer/>
-
-    {/* Video block*/}
-
-    <section>
-      <YouTube videoId="D0I1LbX4YD0" opts={options}/>
-    </section>
-
-    {/* /Video block*/}
-
+    <VideoBanner/>
 
     {/* Recent news block*/}
 
@@ -152,7 +137,7 @@ function Home(props: AppProps) {
 
     <section className="bg-light -padding-top60 -padding-bottom60">
       <div className="container">
-        <form  className="d-flex justify-content-center">
+        <form className="d-flex justify-content-center">
           <label>
             <input className="form-control" type="text" placeholder="Enter your email" name="email"/>
           </label>
